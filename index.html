@@ -1,31 +1,88 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Vibra</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>VIBRA</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ENCABEZADO -->
-    <header class="top-bar">
-        <div class="logo">VIBRA</div>
+    <!-- ============================= -->
+    <!-- BARRA SUPERIOR -->
+    <!-- ============================= -->
 
-        <button class="search-btn">🔍</button>
+    <header class="top-bar">
+
+        <div class="brand">
+            <span class="brand-icon">V</span>
+            <span class="brand-name">VIBRA</span>
+        </div>
+
+        <div class="top-actions">
+
+            <button
+                class="icon-button"
+                id="searchButton"
+                aria-label="Buscar">
+                🔍
+            </button>
+
+            <button
+                class="icon-button"
+                id="notificationsButton"
+                aria-label="Notificaciones">
+                🔔
+                <span class="notification-dot"></span>
+            </button>
+
+        </div>
+
     </header>
 
 
-    <!-- CONTENEDOR DE VIDEOS -->
+    <!-- ============================= -->
+    <!-- SELECTOR DE CONTENIDO -->
+    <!-- ============================= -->
+
+    <div class="feed-tabs">
+
+        <button class="feed-tab active">
+            Para ti
+        </button>
+
+        <button class="feed-tab">
+            Siguiendo
+        </button>
+
+        <button class="feed-tab">
+            🔥 Tendencias
+        </button>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- FEED DE VIDEOS -->
+    <!-- ============================= -->
+
     <main class="video-feed">
 
+
         <!-- VIDEO 1 -->
-        <section class="video">
+        <article class="video-card">
 
             <video
+                class="video-player"
                 src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
                 autoplay
                 muted
@@ -33,175 +90,404 @@
                 playsinline>
             </video>
 
-            <div class="video-info">
 
-                <h3>@creador</h3>
+            <!-- GRADIENTE -->
+            <div class="video-gradient"></div>
 
-                <p>
-                    🌎 Bienvenido a Vibra.
-                    Aquí empieza algo diferente.
+
+            <!-- INFORMACIÓN -->
+            <div class="video-information">
+
+                <div class="creator">
+
+                    <div class="avatar">
+                        D
+                    </div>
+
+                    <div>
+                        <strong>@duvan</strong>
+                        <span>✨ Creador</span>
+                    </div>
+
+                    <button class="follow-button">
+                        Seguir
+                    </button>
+
+                </div>
+
+
+                <p class="description">
+                    🌎 Bienvenido a VIBRA.
+                    El lugar donde tus videos cobran vida.
                 </p>
 
-                <span>🎵 Sonido original</span>
+
+                <div class="music">
+                    🎵 Sonido original · VIBRA
+                </div>
 
             </div>
 
 
-            <!-- BOTONES -->
-            <div class="actions">
+            <!-- ACCIONES -->
+            <div class="video-actions">
 
-                <button onclick="likeVideo(this)">
-                    ❤️
-                    <span>0</span>
+                <button
+                    class="action-button like-button"
+                    onclick="toggleLike(this)">
+
+                    <span class="action-icon">❤️</span>
+                    <span class="action-number">0</span>
+
                 </button>
 
-                <button onclick="commentVideo()">
-                    💬
-                    <span>0</span>
+
+                <button
+                    class="action-button"
+                    onclick="openComments()">
+
+                    <span class="action-icon">💬</span>
+                    <span class="action-number">0</span>
+
                 </button>
 
-                <button onclick="shareVideo()">
-                    ↗️
+
+                <button
+                    class="action-button"
+                    onclick="shareVideo()">
+
+                    <span class="action-icon">↗️</span>
+                    <span class="action-number">Compartir</span>
+
                 </button>
 
-                <button>
-                    👤
+
+                <button class="action-button">
+
+                    <span class="action-icon">🔖</span>
+                    <span class="action-number">Guardar</span>
+
                 </button>
 
             </div>
 
-        </section>
+        </article>
+
 
 
         <!-- VIDEO 2 -->
-        <section class="video">
+        <article class="video-card">
 
             <video
+                class="video-player"
                 src="https://www.w3schools.com/html/mov_bbb.mp4"
                 muted
                 loop
                 playsinline>
             </video>
 
-            <div class="video-info">
 
-                <h3>@vibra_user</h3>
+            <div class="video-gradient"></div>
 
-                <p>
-                    🔥 ¿Qué estás viendo hoy?
+
+            <div class="video-information">
+
+                <div class="creator">
+
+                    <div class="avatar avatar-two">
+                        V
+                    </div>
+
+                    <div>
+                        <strong>@vibra</strong>
+                        <span>🔥 Tendencia</span>
+                    </div>
+
+                    <button class="follow-button">
+                        Seguir
+                    </button>
+
+                </div>
+
+
+                <p class="description">
+                    🔥 Este video está explotando en VIBRA.
                 </p>
 
-                <span>🎵 Vibra Music</span>
+
+                <div class="music">
+                    🎵 Vibra Music
+                </div>
 
             </div>
 
 
-            <div class="actions">
+            <div class="video-actions">
 
-                <button onclick="likeVideo(this)">
-                    ❤️
-                    <span>0</span>
+                <button
+                    class="action-button like-button"
+                    onclick="toggleLike(this)">
+
+                    <span class="action-icon">❤️</span>
+                    <span class="action-number">0</span>
+
                 </button>
 
-                <button onclick="commentVideo()">
-                    💬
-                    <span>0</span>
+
+                <button
+                    class="action-button"
+                    onclick="openComments()">
+
+                    <span class="action-icon">💬</span>
+                    <span class="action-number">0</span>
+
                 </button>
 
-                <button onclick="shareVideo()">
-                    ↗️
+
+                <button
+                    class="action-button"
+                    onclick="shareVideo()">
+
+                    <span class="action-icon">↗️</span>
+                    <span class="action-number">Compartir</span>
+
                 </button>
 
-                <button>
-                    👤
+
+                <button class="action-button">
+
+                    <span class="action-icon">🔖</span>
+                    <span class="action-number">Guardar</span>
+
                 </button>
 
             </div>
 
-        </section>
+        </article>
+
 
 
         <!-- VIDEO 3 -->
-        <section class="video">
+        <article class="video-card">
 
             <video
+                class="video-player"
                 src="https://www.w3schools.com/html/movie.mp4"
                 muted
                 loop
                 playsinline>
             </video>
 
-            <div class="video-info">
 
-                <h3>@nuevo_creador</h3>
+            <div class="video-gradient"></div>
 
-                <p>
-                    🚀 Este es solo el comienzo.
+
+            <div class="video-information">
+
+                <div class="creator">
+
+                    <div class="avatar avatar-three">
+                        C
+                    </div>
+
+                    <div>
+                        <strong>@creador</strong>
+                        <span>🚀 Nuevo</span>
+                    </div>
+
+                    <button class="follow-button">
+                        Seguir
+                    </button>
+
+                </div>
+
+
+                <p class="description">
+                    🚀 Aquí comienza una nueva generación de videos.
                 </p>
 
-                <span>🎵 Sonido original</span>
+
+                <div class="music">
+                    🎵 Sonido original
+                </div>
 
             </div>
 
 
-            <div class="actions">
+            <div class="video-actions">
 
-                <button onclick="likeVideo(this)">
-                    ❤️
-                    <span>0</span>
+                <button
+                    class="action-button like-button"
+                    onclick="toggleLike(this)">
+
+                    <span class="action-icon">❤️</span>
+                    <span class="action-number">0</span>
+
                 </button>
 
-                <button onclick="commentVideo()">
-                    💬
-                    <span>0</span>
+
+                <button
+                    class="action-button"
+                    onclick="openComments()">
+
+                    <span class="action-icon">💬</span>
+                    <span class="action-number">0</span>
+
                 </button>
 
-                <button onclick="shareVideo()">
-                    ↗️
+
+                <button
+                    class="action-button"
+                    onclick="shareVideo()">
+
+                    <span class="action-icon">↗️</span>
+                    <span class="action-number">Compartir</span>
+
                 </button>
 
-                <button>
-                    👤
+
+                <button class="action-button">
+
+                    <span class="action-icon">🔖</span>
+                    <span class="action-number">Guardar</span>
+
                 </button>
 
             </div>
 
-        </section>
+        </article>
 
     </main>
 
 
+
+    <!-- ============================= -->
+    <!-- VENTANA DE COMENTARIOS -->
+    <!-- ============================= -->
+
+    <div
+        class="comments-overlay"
+        id="commentsOverlay">
+
+        <div class="comments-panel">
+
+            <div class="comments-header">
+
+                <strong>Comentarios</strong>
+
+                <button onclick="closeComments()">
+                    ✕
+                </button>
+
+            </div>
+
+
+            <div class="comments-list">
+
+                <div class="comment">
+                    <div class="comment-avatar">A</div>
+
+                    <div>
+                        <strong>@alex</strong>
+                        <p>🔥 Está brutal este video.</p>
+                    </div>
+                </div>
+
+
+                <div class="comment">
+                    <div class="comment-avatar">M</div>
+
+                    <div>
+                        <strong>@maria</strong>
+                        <p>Me gusta mucho VIBRA ❤️</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="comment-input">
+
+                <input
+                    type="text"
+                    id="commentInput"
+                    placeholder="Escribe un comentario..."
+                >
+
+                <button onclick="sendComment()">
+                    ➤
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ============================= -->
     <!-- BARRA INFERIOR -->
-    <nav class="bottom-nav">
+    <!-- ============================= -->
 
-        <button>
-            🏠
+    <nav class="bottom-navigation">
+
+        <button
+            class="nav-button active"
+            onclick="goHome()">
+
+            <span>🏠</span>
             <small>Inicio</small>
+
         </button>
 
-        <button>
-            🔥
-            <small>Popular</small>
+
+        <button
+            class="nav-button"
+            onclick="showTrending()">
+
+            <span>🔥</span>
+            <small>Tendencias</small>
+
         </button>
 
-        <button class="add">
-            ＋
+
+        <button
+            class="create-button"
+            onclick="createVideo()">
+
+            <span>＋</span>
+
         </button>
 
-        <button>
-            🔍
+
+        <button
+            class="nav-button"
+            onclick="openSearch()">
+
+            <span>🔍</span>
             <small>Buscar</small>
+
         </button>
 
-        <button>
-            👤
+
+        <button
+            class="nav-button"
+            onclick="openProfile()">
+
+            <span>👤</span>
             <small>Perfil</small>
+
         </button>
 
     </nav>
 
 
+    <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
+```
