@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vibra</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="top-bar">
+        <div class="logo">VIBRA</div>
+
+        <button class="search-btn">🔍</button>
+    </header>
+
+
+    <!-- CONTENEDOR DE VIDEOS -->
+    <main class="video-feed">
+
+        <!-- VIDEO 1 -->
+        <section class="video">
+
+            <video
+                src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+                autoplay
+                muted
+                loop
+                playsinline>
+            </video>
+
+            <div class="video-info">
+
+                <h3>@creador</h3>
+
+                <p>
+                    🌎 Bienvenido a Vibra.
+                    Aquí empieza algo diferente.
+                </p>
+
+                <span>🎵 Sonido original</span>
+
+            </div>
+
+
+            <!-- BOTONES -->
+            <div class="actions">
+
+                <button onclick="likeVideo(this)">
+                    ❤️
+                    <span>0</span>
+                </button>
+
+                <button onclick="commentVideo()">
+                    💬
+                    <span>0</span>
+                </button>
+
+                <button onclick="shareVideo()">
+                    ↗️
+                </button>
+
+                <button>
+                    👤
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- VIDEO 2 -->
+        <section class="video">
+
+            <video
+                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                muted
+                loop
+                playsinline>
+            </video>
+
+            <div class="video-info">
+
+                <h3>@vibra_user</h3>
+
+                <p>
+                    🔥 ¿Qué estás viendo hoy?
+                </p>
+
+                <span>🎵 Vibra Music</span>
+
+            </div>
+
+
+            <div class="actions">
+
+                <button onclick="likeVideo(this)">
+                    ❤️
+                    <span>0</span>
+                </button>
+
+                <button onclick="commentVideo()">
+                    💬
+                    <span>0</span>
+                </button>
+
+                <button onclick="shareVideo()">
+                    ↗️
+                </button>
+
+                <button>
+                    👤
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- VIDEO 3 -->
+        <section class="video">
+
+            <video
+                src="https://www.w3schools.com/html/movie.mp4"
+                muted
+                loop
+                playsinline>
+            </video>
+
+            <div class="video-info">
+
+                <h3>@nuevo_creador</h3>
+
+                <p>
+                    🚀 Este es solo el comienzo.
+                </p>
+
+                <span>🎵 Sonido original</span>
+
+            </div>
+
+
+            <div class="actions">
+
+                <button onclick="likeVideo(this)">
+                    ❤️
+                    <span>0</span>
+                </button>
+
+                <button onclick="commentVideo()">
+                    💬
+                    <span>0</span>
+                </button>
+
+                <button onclick="shareVideo()">
+                    ↗️
+                </button>
+
+                <button>
+                    👤
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- BARRA INFERIOR -->
+    <nav class="bottom-nav">
+
+        <button>
+            🏠
+            <small>Inicio</small>
+        </button>
+
+        <button>
+            🔥
+            <small>Popular</small>
+        </button>
+
+        <button class="add">
+            ＋
+        </button>
+
+        <button>
+            🔍
+            <small>Buscar</small>
+        </button>
+
+        <button>
+            👤
+            <small>Perfil</small>
+        </button>
+
+    </nav>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
